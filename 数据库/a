@@ -1,0 +1,28 @@
+请为图书馆的借阅模块设计表结构：
+• 登录注册--->users
+• 借阅记录（书本的状态：是否归还、是否逾期等）--->bookInformation
+• 书籍库--->wholeBooks
+mysql语句：
+create database library;
+use library;
+create table bookInformation(
+    id varchar(10) primary key,
+    bookName varchar(20),
+    author varchar(20),
+    lendPersonName varchar(20),
+    IfReturnBack varchar(20),
+    overtime varchar(20)
+);
+create table users(
+    id varchar(10) primary key,
+    name varchar(20),
+    phone int,
+    lendingBooks varchar(100),
+    returnedBooks varchar(1000),
+    overtimeBookName varchar(500)
+);
+create table wholeBooks(
+    id varchar(10) primary key,
+    bookName varchar(50),
+    author varchar(20)
+);
